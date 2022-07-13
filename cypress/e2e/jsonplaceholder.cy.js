@@ -6,7 +6,7 @@ describe('Probar los metodos del API', () => {
     });
   });
   it('Metodo POST', () => {
-    cy.request('POST', 'https://jsonplaceholder.typicode.com/posts', 
+    cy.request('POST', 'posts', 
     {
       title: 'foo',
       body: 'bar',
@@ -21,7 +21,7 @@ describe('Probar los metodos del API', () => {
     })
   })
   it('Metodo PUT', () => {
-    cy.request('PUT', 'https://jsonplaceholder.typicode.com/posts/1', 
+    cy.request('PUT', 'posts/1', 
     {
       title: 'foo',
       body: 'bar',
@@ -36,14 +36,14 @@ describe('Probar los metodos del API', () => {
     })
   })
   it('Metodo DELETE', () => {
-    cy.request('DELETE', 'https://jsonplaceholder.typicode.com/posts/1')
+    cy.request('DELETE', 'posts/1')
     .then(response => {
       expect(response.status).to.eq(200);
       console.log(response.body);
     })
   })
   it('Metodo PATCH', () => {
-    cy.request('PATCH', 'https://jsonplaceholder.typicode.com/posts/1', 
+    cy.request('PATCH', 'posts/1', 
     {
       title: 'foo',
     Headers: {
